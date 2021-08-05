@@ -1,0 +1,73 @@
+
+
+
+<div class="container p-4 mx-3 py-4">
+  <div class="row">
+  <div class="col-md-6">
+   <form class="example-form" [formGroup]="form"  (ngSubmit)="submit()">
+    <div class="row my-4">
+        <div class="col">
+               <label for="exampleFormControlInput1 " class="form-label action ">API Call</label>
+               <input type="text" class="form-control   p-3 shadow field border-0" 
+              id="name" name = "name" placeholder="localhost:8080/get-all-employee/"  formControlName="name"  required>     
+         </div>
+         </div>
+         <div class="row my-4">
+          <div class="col-md-6">
+    
+             <label for="exampleFormControlTextarea1" class="form-label action ">Data</label>
+             <textarea class="form-control  p-3 shadow field border-0" id="description" 
+              formControlName="data" name = "data" rows="3" placeholder="data"></textarea>
+           </div>
+
+          </div>
+          <div class="row my-4">
+            <div class="col-md-6">
+      
+               <label for="exampleFormControlTextarea1" class="form-label action ">ID</label>
+               <textarea class="form-control  p-3 shadow field border-0" id="description" 
+                formControlName="id" name = "id" rows="3" placeholder="id"></textarea>
+             </div>
+  
+            </div>
+         <div class="row my-4">
+           <div class="col"> 
+               <label for="exampleFormControlInput1" class="form-label action ">Command</label>
+               <input type="text" class="form-control p-3 shadow  field border-0" 
+               id="command" name ="command" placeholder="PUT , POST , GET , DELETE"  formControlName="command"  required>
+
+             </div>
+            </div>   
+        <div class="row float-end my-4">
+        
+             
+               <div class="col">
+               <button type="submit" class="btn btn-success float-end mx-2 my-4" [disabled]="!form.valid">
+                Call</button>
+             </div>
+             </div>
+            
+ </form>
+ 
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+  <div *ngIf="error" class="my-4">
+
+    <div class="alert alert-danger alert-dismissible" role="alert">
+     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> >
+    {{msg}}
+     </div>
+   </div>
+   <div *ngIf="success" class="my-4">
+     <div class="alert alert-success alert-dismissible" role="alert">
+       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> >
+     {{msg}}
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
